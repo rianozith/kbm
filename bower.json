@@ -1,0 +1,16 @@
+{
+  "name": "kbm",
+  "description": "aplikasi kbm kelompok",
+  "main": "",
+  "authors": [
+    "riano"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "kbm"
+  ],
+  "homepage": "",
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}
