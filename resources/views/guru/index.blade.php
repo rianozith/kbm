@@ -1,40 +1,42 @@
 @extends('layouts.master_navbar')
 
 @section('title')
-Input Murid
+Index Guru
 @stop
 
 @section('content')
-<p><h2>daftar murid</h2></p>
-<a href="{{route('siswa.create')}}" class="btn btn-info">New Murid</a>
+<p><h2>Daftar Guru</h2></p>
+@if(Session::has('flash_message'))
+    <div class="alert alert-success alert-dismissable">
+        <strong>{{session('flash_message')}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+@endif
+
+<a href="{{route('guru.create')}}" class="btn btn-info">New Guru</a>
 <div class="table-responsive">
-    <table class="table-bordered">
+    <table class="table-bordered table-hover table-striped col-md-6 offset-md-6">
         <thead>
             <tr>
-                <th>no</th>
-                <th>nama</th>
-                <th>Umur</th>
-                <th>Alamat</th>
-                <th>No Hp</th>
-                <th>kelas</th>
+                <th style="text-align: center">no</th>
+                <th style="text-align: center">nama Guru</th>
+                <th style="text-align: center">No Hp</th>
+                <th style="text-align: center">action</th>
             </tr>
         </thead>
         <tbody>
-            <?php $no = $siswa->firstItem() - 1 ; ?>
-            @foreach(App\siswa::all() as $value)
+            <?php $no = $guru->firstItem() - 1 ; ?>
+            @foreach($guru as $value)
             <?php $no++ ;?>
             <tr>
                 <td>{{$no}}</td>
-                <td>{{ $value -> nama_siswa }}</td>
-                <td>{{ $value -> umur_siswa }}</td>
-                <td>{{ $value -> alamat_siswa }}</td>
-                <td>{{ $value -> nohp_siswa }}</td>
-                <td>{{ $value -> kelas_siswa }}</td>
+                <td>{{ $value -> nama_guru }}</td>
+                <td>{{ $value -> nohp_guru }}</td>
                 <td>
-                    {!! Form::model($siswa, ['route' => ['siswa.destroy', $siswa], 
-                    'method'=>'delete', 'class' => 'form-inline'])!!}
+                    {!! Form::open(['url' => 'guru/'. $value->id, 'method'=>'delete', 'class' => 'form-inline'])!!}
 
-                        <a href="{{ route('siswa.edit', $siswa) }}">edit</a> | 
+                        <a href="{{ route('guru.edit', $value->id) }}">edit</a> | 
                         {!! Form::submit('delete', ['class'=>'btn btn-xs btn-danger']) !!}
 
                     {!! Form::close() !!}
@@ -43,9 +45,10 @@ Input Murid
             @endforeach
         </tbody>
     </table>
+    {{ $guru->render() }}
     
 </div> {{-- /.table resposive --}}
 @stop
 {{-- 
-<a href="{{route('siswa.edit', $value->id )}}" class="btn btn-info btn-xs"><span class="icon-pencil">edit</span> </a>
-<a href="{{route('siswa.destroy', $value->id )}}" class="btn btn-info btn-xs"><span class="icon-trash">delete</span></a> --}}
+<a href="{{route('guru.edit', $value->id )}}" class="btn btn-info btn-xs"><span class="icon-pencil">edit</span> </a>
+<a href="{{route('guru.destroy', $value->id )}}" class="btn btn-info btn-xs"><span class="icon-trash">delete</span></a> --}}

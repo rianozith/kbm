@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\guru;
 
 class GuruController extends Controller
 {
@@ -13,7 +14,10 @@ class GuruController extends Controller
      */
     public function index()
     {
-        //
+        $guru = guru::paginate(5);
+
+        return view('guru.index', compact('guru'));
+
     }
 
     /**
@@ -79,6 +83,10 @@ class GuruController extends Controller
      */
     public function destroy($id)
     {
-        //
+        guru::findOrFail($id)->delete();
+
+        \Session()->flash('flash_message', 'Data was deleted');
+
+        return redirect()->route('guru.index');
     }
 }
