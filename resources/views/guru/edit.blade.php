@@ -1,14 +1,15 @@
 @extends('layouts.master_navbar')
 
 @section('title')
-Edit siswa
+Edit Guru
 @stop
 
 @section('content')
-<h3>Edit data murid</h3> <br>
-{!! Form::open(['url' => 'siswa.update']) !!}
+<h3>Edit data Guru</h3> <br> <hr>
 
-    @include('siswa._form')
+{!! Form::model($guru,['route' => ['guru.update', $guru], 'method' => 'PUT']) !!}
+
+    @include('guru._form')
 
 {!! Form::close() !!}
 @stop

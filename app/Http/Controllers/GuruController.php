@@ -27,7 +27,7 @@ class GuruController extends Controller
      */
     public function create()
     {
-        //
+        return view('guru.create');
     }
 
     /**
@@ -38,7 +38,11 @@ class GuruController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        guru::create($request->all());
+
+
+        \Session()->flash('flash_message', 'Data stored');
+        return redirect()->route('guru.index');
     }
 
     /**
@@ -49,7 +53,8 @@ class GuruController extends Controller
      */
     public function show($id)
     {
-        //
+        $guru = guru::findOrFail($id);
+        return view('guru.show', compact('guru'));
     }
 
     /**
@@ -60,7 +65,8 @@ class GuruController extends Controller
      */
     public function edit($id)
     {
-        //
+        $guru = guru::findOrFail($id);
+        return view('guru.edit', compact('guru'));
     }
 
     /**
@@ -72,7 +78,10 @@ class GuruController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        guru::findOrFail($id)->update($request->all());
+
+        \Session()->flash('flash_message', 'data updated');
+        return redirect()->route('guru.index');
     }
 
     /**

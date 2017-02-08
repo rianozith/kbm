@@ -9,14 +9,14 @@ Index Guru
 @if(Session::has('flash_message'))
     <div class="alert alert-success alert-dismissable">
         <strong>{{session('flash_message')}}</strong>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     </div>
 
 @endif
 
 <a href="{{route('guru.create')}}" class="btn btn-info">New Guru</a>
 <div class="table-responsive">
-    <table class="table-bordered table-hover table-striped col-md-6 offset-md-6">
+    <table class="table-bordered table-hover table-striped">
         <thead>
             <tr>
                 <th style="text-align: center">no</th>
@@ -31,7 +31,7 @@ Index Guru
             <?php $no++ ;?>
             <tr>
                 <td>{{$no}}</td>
-                <td>{{ $value -> nama_guru }}</td>
+                <td> <a href="{{route('guru.show', $value->id)}}">{{ $value -> nama_guru }}</a> </td>
                 <td>{{ $value -> nohp_guru }}</td>
                 <td>
                     {!! Form::open(['url' => 'guru/'. $value->id, 'method'=>'delete', 'class' => 'form-inline'])!!}
@@ -45,9 +45,10 @@ Index Guru
             @endforeach
         </tbody>
     </table>
-    {{ $guru->render() }}
-    
+
+{{ $guru->render() }}
 </div> {{-- /.table resposive --}}
+
 @stop
 {{-- 
 <a href="{{route('guru.edit', $value->id )}}" class="btn btn-info btn-xs"><span class="icon-pencil">edit</span> </a>

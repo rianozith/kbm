@@ -1,14 +1,14 @@
 @extends('layouts.master_navbar')
 
 @section('title')
-Create siswa
+Create Guru
 @stop
 
 @section('content')
-<h3>input data murid</h3> <br>
-{!! Form::open(['route' => 'siswa.store']) !!}
+<h3>input data Guru</h3> <br>
+{!! Form::open(['route' => 'guru.store']) !!}
 
-    @include('siswa._form')
+    @include('guru._form')
 
 {!! Form::close() !!}
 @stop
