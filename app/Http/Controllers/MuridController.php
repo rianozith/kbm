@@ -43,6 +43,7 @@ class MuridController extends Controller
     {
         // dd($request->all());
         \App\murid::create($request->all());
+        \Session::flash('flash_message',' Data Saved'); //<--FLASH MESSAGE
         return redirect()->route('siswa.index');
     }
 
@@ -82,6 +83,7 @@ class MuridController extends Controller
     {
         $murid = murid::findOrFail($id);
         $murid->update($request->all());
+        \Session::flash('flash_message',' successfully Updated.'); //<--FLASH MESSAGE
 
         return redirect()->route('siswa.index');
     }
