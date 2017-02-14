@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMuridsTable extends Migration
+class CreateKegiatansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,14 @@ class CreateMuridsTable extends Migration
      */
     public function up()
     {
-        Schema::create('murids', function (Blueprint $table) {
+        Schema::create('kegiatans', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama_murid');
-            $table->integer('umur_murid');
-            $table->string('alamat_murid');
-            $table->string('nohp_murid');
-            $table->string('kelas_murid');
-            $table->integer('kegiatan_id');
+            $table->string('nama_kegiatan');
+            $table->date('tanggal_kegiatan');
+            $table->string('jam_kegiatan');
+            $table->string('tempat_kegiatan');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -33,6 +30,6 @@ class CreateMuridsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('murids');
+        Schema::dropIfExists('kegiatans');
     }
 }

@@ -64,6 +64,7 @@
               <ul class="dropdown-menu">
                 <li><a href="siswa">Murid</a></li>
                 <li><a href="guru">Pengajar</a></li>
+                <li><a href="acara">Acara</a></li>
               </ul>
             </li> <!-- /.dropdown2 -->
           </ul>

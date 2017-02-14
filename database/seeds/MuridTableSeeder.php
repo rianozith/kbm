@@ -16,18 +16,16 @@ class MuridTableSeeder extends Seeder
     {
         $faker = Faker::create();
 		foreach ( range(1,10) as $index ) {
-		DB::insert('insert into murids (nama_murid, umur_murid, alamat_murid, nohp_murid, kelas_murid, id_kelas_generus, id_kehadiran_murid, id_acara_generus) 
+		DB::insert('insert into murids (nama_murid, umur_murid, alamat_murid, nohp_murid, kelas_murid, kegiatan_id) 
 
-			values (:nama_murid, :umur_murid, :alamat_murid, :nohp_murid, :kelas_murid, :id_kelas_generus, :id_kehadiran_murid, :id_acara_generus)', [
+			values (:nama_murid, :umur_murid, :alamat_murid, :nohp_murid, :kelas_murid, :kegiatan_id)', [
 
 		'nama_murid' => $faker->name, 
 		'umur_murid' => $faker->biasedNumberBetween($min = 7, $max = 12, $function = 'sqrt'), 
 		'alamat_murid' => $faker->address, 
 		'nohp_murid' => $faker->phoneNumber, 
-		'kelas_murid' => $faker->word,
-		'id_kelas_generus' => 1, 
-		'id_kehadiran_murid' => 1, 
-		'id_acara_generus' => 1
+		'kelas_murid' => $faker->randomElement($array = array ('a','b','c')),
+		'kegiatan_id' => $faker->numberBetween($min = 1, $max = 5)
 		
 		]);
 		}

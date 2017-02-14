@@ -29,6 +29,7 @@ Index Murid
                 <th style="text-align: center">Alamat</th>
                 <th style="text-align: center">No Hp</th>
                 <th style="text-align: center">kelas</th>
+                <th style="text-align: center"><a href="{{route('acara.index')}}">Kegiatan</a> </th>
                 <th style="text-align: center">action</th>
             </tr>
         </thead>
@@ -43,6 +44,7 @@ Index Murid
                 <td>{{ $value -> alamat_murid }}</td>
                 <td>{{ $value -> nohp_murid }}</td>
                 <td>{{ $value -> kelas_murid }}</td>
+                <td><a href="{{route('acara.show', $value-> kegiatan_id)}}"> {{ $value -> nama_kegiatan }}</a></td>
                 <td>
                     <a href="{{route('siswa.edit',$value-> id)}}">ubah</a> | 
                 

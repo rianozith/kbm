@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\guru;
+use App\kegiatan;
 
-class GuruController extends Controller
+class KegiatanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,8 @@ class GuruController extends Controller
      */
     public function index()
     {
-        $guru = guru::paginate(5);
-
-        return view('guru.index', compact('guru'));
-
+        $kegiatan = kegiatan::paginate(5);
+        return view('acara.index', compact('kegiatan'));
     }
 
     /**
@@ -27,7 +25,7 @@ class GuruController extends Controller
      */
     public function create()
     {
-        return view('guru.create');
+        //
     }
 
     /**
@@ -38,11 +36,7 @@ class GuruController extends Controller
      */
     public function store(Request $request)
     {
-        guru::create($request->all());
-
-
-        \Session()->flash('flash_message', 'Data stored');
-        return redirect()->route('guru.index');
+        //
     }
 
     /**
@@ -53,8 +47,7 @@ class GuruController extends Controller
      */
     public function show($id)
     {
-        $guru = guru::findOrFail($id);
-        return view('guru.show', compact('guru'));
+        //
     }
 
     /**
@@ -65,8 +58,7 @@ class GuruController extends Controller
      */
     public function edit($id)
     {
-        $guru = guru::findOrFail($id);
-        return view('guru.edit', compact('guru'));
+        //
     }
 
     /**
@@ -78,10 +70,7 @@ class GuruController extends Controller
      */
     public function update(Request $request, $id)
     {
-        guru::findOrFail($id)->update($request->all());
-
-        \Session()->flash('flash_message', 'data updated');
-        return redirect()->route('guru.index');
+        //
     }
 
     /**
@@ -92,10 +81,6 @@ class GuruController extends Controller
      */
     public function destroy($id)
     {
-        guru::findOrFail($id)->delete();
-
-        \Session()->flash('flash_message', 'Data was deleted');
-
-        return redirect()->route('guru.index');
+        //
     }
 }

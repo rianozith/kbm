@@ -12,7 +12,5 @@ class murid extends Model
 								'alamat_murid',
 								'nohp_murid',
 								'kelas_murid',
-								'id_kelas_generus',
-								'id_kehadiran_murid',
-								'id_acara_generus');
+								'kegiatan_id');
 }

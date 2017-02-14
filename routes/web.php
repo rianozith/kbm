@@ -21,6 +21,7 @@ Route::get('/register', function () {
 
 Route::resource('siswa', 'MuridController');
 Route::resource('guru', 'GuruController');
+Route::resource('acara', 'KegiatanController');
 
 // Route::get('/index', function () {
 //     return view('index');
