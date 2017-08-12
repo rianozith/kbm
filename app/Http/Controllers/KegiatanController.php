@@ -15,7 +15,7 @@ class KegiatanController extends Controller
     public function index()
     {
         $kegiatan = kegiatan::paginate(5);
-        return view('acara.index', compact('kegiatan'));
+        return view('jadwal.acara.index', compact('kegiatan'));
     }
 
     /**
@@ -25,7 +25,7 @@ class KegiatanController extends Controller
      */
     public function create()
     {
-        //
+        return view('jadwal.acara.create');
     }
 
     /**
@@ -36,7 +36,9 @@ class KegiatanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        \App\kegiatan::create($request->all());
+        \Session::flash('flash_message',' Data Saved'); //<--FLASH MESSAGE
+        return redirect()->route('acara.index');
     }
 
     /**
@@ -47,7 +49,8 @@ class KegiatanController extends Controller
      */
     public function show($id)
     {
-        //
+        $acara = kegiatan::find($id);
+        return view('jadwal.acara.show', compact('acara'));
     }
 
     /**
@@ -81,6 +84,10 @@ class KegiatanController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        kegiatan::find($id)->delete();
+
+        // return redirect()->route('siswa.index');  
+        \Session::flash('flash_message',' successfully delete.'); //<--FLASH MESSAGE
+
+        return redirect()->route('jadwal.acara.index');    }
 }

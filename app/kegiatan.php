@@ -10,5 +10,12 @@ class kegiatan extends Model
     protected $fillable = array('nama_kegiatan',
 								'tanggal_kegiatan',
 								'jam_kegiatan',
-								'tempat_kegiatan');
+								'tempat_kegiatan',
+								'ruangan_id',
+								'guru_id');
+
+    
 }
+
+
+	

@@ -15,13 +15,33 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/planning', function () {
+    return view('planning');
+});
+
 Route::get('/register', function () {
     return view('register');
 });
 
-Route::resource('siswa', 'MuridController');
-Route::resource('guru', 'GuruController');
-Route::resource('acara', 'KegiatanController');
+// Route::resource('siswa', 'MuridController');
+// Route::resource('guru', 'GuruController');
+// Route::resource('acara', 'KegiatanController');
+// Route::resource('kelas', 'KelasController');
+// Route::resource('prodi', 'ProdiController');
+// Route::resource('program', 'StatProgramController');
+// Route::resource('ruangan', 'RuanganController');
+// Route::resource('kelompok', 'KelompokController');
+
+Route::resource('class', 'ClassController');
+Route::resource('student', 'StudentController');
+Route::resource('studentDetail', 'StudentDetailsController');
+Route::resource('teacher', 'TeacherController');
+Route::resource('teacherDetail', 'TeacherDetailsController');
+Route::resource('schedule', 'ScheduleController');
+Route::resource('presence', 'PresenceController');
+Route::resource('studyprogram', 'StudyProgramController'); //no crud
+Route::resource('subjects', 'SubjectsController'); //no crud
+Route::resource('sambung', 'SambungController'); //no crud
 
 // Route::get('/index', function () {
 //     return view('index');

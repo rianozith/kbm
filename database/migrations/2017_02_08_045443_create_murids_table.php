@@ -17,10 +17,11 @@ class CreateMuridsTable extends Migration
             $table->increments('id');
             $table->string('nama_murid');
             $table->integer('umur_murid');
+            $table->string('gender');
             $table->string('alamat_murid');
             $table->string('nohp_murid');
-            $table->string('kelas_murid');
-            $table->integer('kegiatan_id');
+            $table->integer('kelas_id');
+            // $table->integer('kelas_id');
             $table->timestamps();
         });
 

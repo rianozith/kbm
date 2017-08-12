@@ -18,19 +18,21 @@ class MuridController extends Controller
      */
     public function index()
     {
-        $murid = \DB::table('murids')
-            ->join('kegiatans', 'murids.kegiatan_id', '=', 'kegiatans.id')
-            ->select(
-                'murids.id',
-                'murids.nama_murid',
-                'murids.umur_murid',
-                'murids.alamat_murid',
-                'murids.nohp_murid',
-                'murids.kelas_murid',
-                'murids.kegiatan_id',
-                'kegiatans.nama_kegiatan'
-            )
-            ->paginate(10);
+        // $murid = \DB::table('murids')
+        //     ->join('kegiatans', 'murids.kegiatan_id', '=', 'kegiatans.id')
+        //     ->select(
+        //         'murids.id',
+        //         'murids.nama_murid',
+        //         'murids.umur_murid',
+        //         'murids.alamat_murid',
+        //         'murids.nohp_murid',
+        //         'murids.kelas_murid',
+        //         'murids.kegiatan_id',
+        //         'kegiatans.nama_kegiatan'
+        //     )
+        //     ->paginate(10);
+
+        $murid = murid::paginate(10);
 
         // $murid = murid::paginate(10); // get data dgn paginasi 
         // return view('kbm.murid_input',compact('murid')); // load view dan kirim data

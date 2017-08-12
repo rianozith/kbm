@@ -1,4 +1,5 @@
-<div class="form-group">
+    
+    <div class="form-group">
     	{!! Form::label('nama_murid', 'Nama murid') !!}
     	{!! Form::text('nama_murid', null, [
     		'class'=>'form-control input-md', 

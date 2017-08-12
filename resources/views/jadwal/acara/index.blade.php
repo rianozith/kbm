@@ -28,6 +28,8 @@ Index acara
                 <th>tanggal</th>
                 <th>jam</th>
                 <th>tempat</th>
+                <th>ruangan</th>
+                <th>id guru</th>
                 <th>action</th>
             </tr>
         </thead>
@@ -41,6 +43,8 @@ Index acara
                 <td>{{ $value -> tanggal_kegiatan }}</td>
                 <td>{{ $value -> jam_kegiatan }}</td>
                 <td>{{ $value -> tempat_kegiatan }}</td>
+                <td>{{ $value -> ruangan_id }}</td>
+                <td>{{ $value -> guru_id }}</td>
                 <td>
                     <a href="{{route('acara.edit',$value-> id)}}">ubah</a> | 
                 

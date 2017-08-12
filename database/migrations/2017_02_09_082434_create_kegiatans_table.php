@@ -19,6 +19,8 @@ class CreateKegiatansTable extends Migration
             $table->date('tanggal_kegiatan');
             $table->string('jam_kegiatan');
             $table->string('tempat_kegiatan');
+            $table->integer('ruangan_id')->default(1);
+            $table->integer('guru_id')->default(1);
             $table->timestamps();
         });
     }

@@ -5,10 +5,10 @@ Create siswa
 @stop
 
 @section('content')
-<h3>input data murid</h3> <br>
-{!! Form::open(['route' => 'siswa.store']) !!}
+<h3>input acara</h3> <br>
+{!! Form::open(['route' => 'acara.store']) !!}
 
-    @include('siswa._form')
+    @include('jadwal.acara._form')
 
 {!! Form::close() !!}
 @stop

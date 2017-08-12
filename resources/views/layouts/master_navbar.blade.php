@@ -48,23 +48,18 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="index">HOME</a></li>
             <li><a href="planning">Planning</a></li>
-            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="siswa">Murid</a></li>
+            <li><a href="guru">Pengajar</a></li>
+            <li><a href="acara">Acara</a></li>
+            <li><a href="kelas">Kelas</a></li>            
             <li><a href="login" data-toggle="modal" data-target="#loginModal">Login</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="blog.html">BLOG</a></li>
-                <li><a href="single-post.html">SINGLE POST</a></li>
-                <li><a href="portfolio.html">PORTFOLIO</a></li>
-                <li><a href="single-project.html">SINGLE PROJECT</a></li>
-              </ul>
-            </li> <!-- /.dropdown1 -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">KBM <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="siswa">Murid</a></li>
                 <li><a href="guru">Pengajar</a></li>
                 <li><a href="acara">Acara</a></li>
+                <li><a href="kelas">Kelas</a></li>
               </ul>
             </li> <!-- /.dropdown2 -->
           </ul>
