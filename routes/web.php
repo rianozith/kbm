@@ -42,6 +42,7 @@ Route::resource('presence', 'PresenceController');
 Route::resource('studyprogram', 'StudyProgramController'); //no crud
 Route::resource('subjects', 'SubjectsController'); //no crud
 Route::resource('sambung', 'SambungController'); //no crud
+Route::resource('detailStudent', 'DetailStudentController');
 
 // Route::get('/index', function () {
 //     return view('index');
