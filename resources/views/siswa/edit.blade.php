@@ -18,24 +18,22 @@ Edit siswa
 <div class="tab-content">
   <div id="home" class="tab-pane fade in active">
     <h3>Edit Bio data siswa</h3>
-    {!! Form::model($murid, ['route' => ['siswa.update', $murid], 'method'=>'PUT'])!!}
+    {!! Form::model($student, ['route' => ['siswa.update', $student->id], 'method'=>'PUT'])!!} 
 
     @include('siswa._form')
 
-	{!! Form::close() !!}
+	  {!! Form::close() !!}
   </div>
   <div id="menu0" class="tab-pane fade">
     <h3>Detail Siswa</h3>
     <p>Some content in Detail Siswa.</p>
-    <ul>
-    	<li>nama panggilan</li>
-    	<li>jenis kelamin</li>
-    	<li>golongan daranh</li>
-    	<li>ttl</li>
-    	<li>anak ke</li>
-    	<li>jumlah saudara</li>
-    	<li>foto</li>
-    </ul>
+
+    {!! Form::model($student, ['route' => ['siswadetail.update', $student->id], 'method'=>'PUT'])!!} {{-- laravel colelctive? --}}
+
+    @include('siswa._form_details')
+
+    {!! Form::close() !!}
+    
   </div>
   <div id="menu1" class="tab-pane fade">
     <h3>Ayah</h3>

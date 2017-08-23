@@ -33,8 +33,8 @@ Route::get('/register', function () {
 // Route::resource('kelompok', 'KelompokController');
 
 Route::resource('class', 'ClassController');
-Route::resource('student', 'StudentController');
-Route::resource('studentDetail', 'StudentDetailsController');
+Route::resource('siswa', 'StudentController');
+Route::resource('siswadetail', 'StudentDetailsController');
 Route::resource('teacher', 'TeacherController');
 Route::resource('teacherDetail', 'TeacherDetailsController');
 Route::resource('schedule', 'ScheduleController');

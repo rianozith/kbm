@@ -1,33 +1,39 @@
     
     <div class="form-group">
-    	{!! Form::label('nama_murid', 'Nama murid') !!}
-    	{!! Form::text('nama_murid', null, [
+    	{!! Form::label('name', 'Nama murid') !!}
+    	{!! Form::text('name', null, [
     		'class'=>'form-control input-md', 
     		'placeholder'=>'Nama']) !!}
     </div>
     <div class="form-group">
-    	{!! Form::label('umur_murid', 'Umur') !!}
-    	{!! Form::text('umur_murid', null, [
+    	{!! Form::label('studentdetail_id', 'Detail ID') !!}
+    	{!! Form::text('studentdetail_id', null, [
     		'class'=>'form-control input-md', 
-    		'placeholder'=>'Umur']) !!}
+    		'placeholder'=>'Detail id']) !!}
     </div>
     <div class="form-group">
-    	{!! Form::label('alamat_murid', 'Alamat') !!}
-    	{!! Form::text('alamat_murid', null, [
+    	{!! Form::label('class_id', 'Class id') !!}
+    	{!! Form::text('class_id', null, [
     		'class'=>'form-control input-md', 
-    		'placeholder'=>'alamat']) !!}
+    		'placeholder'=>'Class id']) !!}
     </div>
     <div class="form-group">
-    	{!! Form::label('nohp_murid', 'No HP') !!}
-    	{!! Form::text('nohp_murid', null, [
+    	{!! Form::label('schedule_id', 'Schedule id') !!}
+    	{!! Form::text('schedule_id', null, [
     		'class'=>'form-control input-md', 
-    		'placeholder'=>'Nomer HP']) !!}
+    		'placeholder'=>'Schedule id']) !!}
     </div>
     <div class="form-group">
-    	{!! Form::label('kelas_murid', 'kelas') !!}
-    	{!! Form::text('kelas_murid', null, [
+    	{!! Form::label('presence_id', 'Presence id') !!}
+    	{!! Form::text('presence_id', null, [
     		'class'=>'form-control input-md', 
-    		'placeholder'=>'kelas']) !!}
+    		'placeholder'=>'Presence id']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('study_program_id', 'Study program id') !!}
+        {!! Form::text('study_program_id', null, [
+            'class'=>'form-control input-md', 
+            'placeholder'=>'Study program id']) !!}
     </div>
 
     {!! Form::submit('Simpan', ['class'=>'btn btn-primary']) !!}

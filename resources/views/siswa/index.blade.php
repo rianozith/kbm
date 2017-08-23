@@ -1,14 +1,14 @@
 @extends('layouts.master_navbar')
 
 @section('title')
-Index Murid
+Index student
 @stop
 
 @section('content')
 
 
 
-<p><h2>daftar murid</h2></p>
+<p><h2>daftar student</h2></p>
     @if(Session::has('flash_message'))
         <div class="alert alert-success alert-dismissible">
             <em> {!! session('flash_message') !!}</em>
@@ -18,36 +18,38 @@ Index Murid
   
 </div>
 
-<a href="{{route('siswa.create')}}" class="btn btn-info">New Murid</a>
+<a href="{{route('siswa.create')}}" class="btn btn-info">New student</a>
 <div class="table-responsive">
     <table class="table-bordered table-striped table-hover col-md-12">
         <thead>
             <tr>
                 <th style="text-align: center">no</th>
                 <th style="text-align: center">nama</th>
-                <th style="text-align: center">Umur</th>
-                <th style="text-align: center">Gender</th>
-                <th style="text-align: center">Alamat</th>
-                <th style="text-align: center">No Hp</th>
-                <th style="text-align: center">kelas</th>
-                <th style="text-align: center"><a href="{{route('acara.index')}}">Kegiatan</a> </th>
+                <th style="text-align: center">umur</th>
+                <th style="text-align: center">alamat</th>
+                <th style="text-align: center">details</th>
+                <th style="text-align: center">class_id</th>
+                <th style="text-align: center">schedule_id</th>
+                <th style="text-align: center">presence_id Hp</th>
+                <th style="text-align: center">study_program_id</th>
                 <th style="text-align: center">action</th>
             </tr>
         </thead>
         <tbody>
-            <?php $no = $murid->firstItem() - 1 ; ?>
-            @foreach($murid as $value)
+            <?php $no = $student->firstItem() - 1 ; ?>
+            @foreach($student as $value)
             <?php $no++ ;?>
             <tr>
                 <td>{{$no}}</td>
-                <td><a href="{{route('siswa.show', $value-> id)}}">{{ $value -> nama_murid }} </a> </td>
-                <td>{{ $value -> umur_murid }}</td>
-                <td>{{ $value -> gender }}</td>
-                <td>{{ $value -> alamat_murid }}</td>
-                <td>{{ $value -> nohp_murid }}</td>
-                <td>{{ $value -> kelas_id }}</td>
-                <td><a href="{{route('acara.show', $value-> kegiatan_id)}}"> {{ $value -> nama_kegiatan }}</a></td>
-                <td>
+                <td><a href="{{route('siswa.show', $value-> id)}}">{{ $value -> name }} </a> </td>
+                <td style="text-align: center">{{ $value -> age }}</td>
+                <td style="text-align: left">{{ $value -> address }}</td>
+                <td style="text-align: center"><a href="{{route('siswa.show', $value-> id)}}">cek</a></td>
+                <td style="text-align: center">{{ $value -> class_id }}</td>
+                <td style="text-align: center">{{ $value -> schedule_id }}</td>
+                <td style="text-align: center">{{ $value -> presence_id }}</td>
+                <td style="text-align: center">{{ $value -> study_program_id }}</td>
+                <td style="text-align: center">
                     <a href="{{route('siswa.edit',$value-> id)}}">ubah</a> | 
                 
                     {{ Form::open(array('url' => 'siswa/' . $value->id, 'class' => 'pull-right', 'method'=>'delete')) }}
@@ -60,10 +62,10 @@ Index Murid
             @endforeach
         </tbody>
     </table>
-    {{ $murid->render() }}
+    {{ $student->render() }}
     
 </div> {{-- /.table resposive --}}
 @stop
 {{-- 
-<a href="{{route('murid.edit', $value->id )}}" class="btn btn-info btn-xs"><span class="icon-pencil">edit</span> </a>
-<a href="{{route('murid.destroy', $value->id )}}" class="btn btn-info btn-xs"><span class="icon-trash">delete</span></a> --}}
+<a href="{{route('student.edit', $value->id )}}" class="btn btn-info btn-xs"><span class="icon-pencil">edit</span> </a>
+<a href="{{route('student.destroy', $value->id )}}" class="btn btn-info btn-xs"><span class="icon-trash">delete</span></a> --}}

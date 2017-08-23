@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\studentdetail;
 
 class StudentDetailController extends Controller
 {

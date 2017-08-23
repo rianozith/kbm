@@ -8,4 +8,9 @@ class student extends Model
 {
     protected $table = 'students';
     protected $fillable= array( 'name', 'details_id', 'class_id', 'schedule_id', 'presence_id', 'study_program_id', );
+
+    public function studentdetail()
+    {
+        return $this->hasOne('App\student');
+    }
 }
