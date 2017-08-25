@@ -6,8 +6,8 @@
     		'placeholder'=>'Umur']) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('Address', 'Alamat') !!}
-        {!! Form::text('Address', null, [
+        {!! Form::label('address', 'Alamat') !!}
+        {!! Form::text('address', null, [
             'class'=>'form-control input-md', 
             'placeholder'=>'Alamat']) !!}
     </div>
@@ -19,7 +19,7 @@
     </div>
     <div class="form-group">
     	{!! Form::label('pob', 'tempat lahir') !!}
-    	{!! Form::text('pod', null, [
+    	{!! Form::text('pob', null, [
     		'class'=>'form-control input-md', 
     		'placeholder'=>'tempat lahir']) !!}
     </div>
@@ -28,12 +28,6 @@
     	{!! Form::text('dob', null, [
     		'class'=>'form-control input-md', 
     		'placeholder'=>'tgl lahir ']) !!}
-    </div>
-    <div class="form-group">
-    	{!! Form::label('agama', 'agama') !!}
-    	{!! Form::text('agama', null, [
-    		'class'=>'form-control input-md', 
-    		'placeholder'=>'agama']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('blood_type', 'gol darah') !!}
@@ -71,3 +65,5 @@
             'class'=>'form-control input-md', 
             'placeholder'=>'foto']) !!}
     </div>
+
+    {!! Form::submit('Simpan', ['class'=>'btn btn-primary']) !!}
